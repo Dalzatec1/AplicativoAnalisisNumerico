@@ -1,5 +1,4 @@
 import numpy as np
-from sympy import symbols, solve, Eq
 
 class Matrix ():
         def __init__(self, _size, *args:list):
