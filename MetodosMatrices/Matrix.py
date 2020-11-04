@@ -21,11 +21,6 @@ class Matrix ():
             self.ext = self.createExtendedMatrix(args[0],args[1])
             self.A = self.createA(args[0])
             self.B = self.createB(args[1])
-            self.D = None
-            self.L = None
-            self.U = None
-            self.T = None
-            self.C = None
 
 
             #print("\n",self.ext)
@@ -63,33 +58,6 @@ class Matrix ():
                     _tuple = []
                     _i += 1
             return np.array(_rows)
-            
-        def getD(self):
-            self.D = np.diag(np.diag(self.A))
-
-        def getL(self):
-            try:
-                self.L = (np.tril(self.A) * -1) + self.D
-            except:
-                print("\nD needs to be defined first")
-
-        def getU(self):
-            try:
-                self.U = (np.triu(self.A) * -1) + self.D
-            except:
-                print("\nD needs to be defined first")
-
-        def getT(self):
-            try:
-                self.T = np.linalg.inv(self.D).dot(self.L + self.U)
-            except:
-                print("\nD,L and U needs to be defined first")
-
-        def getC(self):
-            try:
-                self.C = np.linalg.inv(self.D).dot(self.B)
-            except:
-                print("\nD and B needs to be defined first")
 
         def switchRows(self, _a, _b):
             self.ext[[_a, _b]] = self.ext[[_b, _a]]
