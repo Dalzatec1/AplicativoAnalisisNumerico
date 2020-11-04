@@ -28,7 +28,7 @@ _x0 = np.zeros(4).reshape(4,1)
 
 #_jac = Jacobi(_matrix,_x0,1E-7,100)
 #_gse = GSeidel(_matrix,_x0,1E-7,100)
-#_sor = Sor(_matrix,_x0,1.5,1E-7,100)
+_sor = Sor(_matrix,_x0,1.5,1E-7,100)
 #_egs = EGS(_matrix)                            #Gauss Simple
 #_egpp = EGPP(_matrix)                          #Gauss Pivoteo Parcial
 #_egpt = EGPT(_matrix)                          #Gauss Pivoteo Total

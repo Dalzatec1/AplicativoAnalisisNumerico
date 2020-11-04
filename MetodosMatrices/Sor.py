@@ -17,10 +17,15 @@ class Sor():
         _U = (np.triu(self.matrix.A) * -1) + _D
         _T = np.linalg.inv(_D - (self.w * _L)).dot((1-self.w) * _D + (self.w * _U))
         _C = self.w * np.linalg.inv(_D - (self.w * _L)).dot(self.matrix.B)
+        [val,vec]=np.linalg.eig(_T)
+        ro=max(abs(val))
 
+        if ro>=1:
+            print("\nEl radio espectral > 1\n")
+            
         print("\nT:\n", _T)
         print("\nC:\n", _C)
-
+        print("\nradio espectral:\n",ro)
         _xant = self.x0
         _E = 1
         _i = 0
