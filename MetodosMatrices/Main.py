@@ -35,7 +35,6 @@ _matrix = Matrix(4,_a,_b)
 
 _x0 = np.zeros(4).reshape(4,1)
 
-
 #_egs = EGS(_matrix)                            #Gauss Simple
 #_egpp = EGPP(_matrix)                          #Gauss Pivoteo Parcial
 #_egpt = EGPT(_matrix)                          #Gauss Pivoteo Total
