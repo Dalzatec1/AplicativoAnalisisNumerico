@@ -37,7 +37,35 @@ class Lagrange():
 
 
         print ("\nPolinomios interpolantes de Lagrange:\n")
+        _cont=0
         for _x in _pols:
-            print(_x)
+            print(_x,"  //L",_cont)
+            _cont+=1
+
+        print("\nPolinomio\n")
+
+        cont=0
+        _polinom=""
+        for f in self.Y:
+            _f=str(f)
+            n=_f+"*L"+str(cont)+"+"
+            _polinom=_polinom+n
+            cont+=1
+        print(_polinom[:len(_polinom)-1])
+
+        print("\nPolinomio extendido:\n")
+        
+        polext=""
+        conta=0
+        for v in self.Y:
+            m=str(_pols[conta])
+            n=str(v)
+            z=" + "+n+"*("+m+")"
+            polext=polext+z
+            conta+=1
+        print(polext[3:])
+
+
+
 
         

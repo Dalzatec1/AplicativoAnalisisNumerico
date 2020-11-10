@@ -21,16 +21,23 @@ class DifDiv():
             _D[_i:_n,_i] = np.divide(_aux1,np.transpose(_aux2))
 
         _res = np.diag(_D)
+    
+        print ("\nTabla de diferencias divididas:\n",_D)        
+        print ("\nCoeficientes del polinomio de Newton:\n",_res) 
+        print ("\nPolinomio:\n",)
+        
+        _pol=""
+        b=""
+        cont=0
+        for f in _res:
+            n=str(self.X[cont])
+            _pol=_pol+" + ("+str(f)+")"+b
+            b=b+"(x - ("+n+"))"        
+            cont+=1
+        print(_pol[2:])
 
-        _exp = _n - 1
-        _pol = ""
-        for _coe in _res:
-            _pol = _pol + str(_coe) + "(x+1)"
-            _exp -= 1
+            
 
-        print ("\nMatriz de Vandermonde:\n",_D)        
-        print ("\nCoeficientes del polinomio:\n",_res) 
-        print ("\nPolinomio:\n",_pol)
             
 
         
