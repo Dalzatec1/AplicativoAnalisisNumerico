@@ -11,6 +11,11 @@ from Lagrange import Lagrange
 from TLineal import TLineal
 from TCuad import TCuad
 from TCubic import TCubic
+from Lusimp import LUSM
+from Luppar import LUPP
+from Crout import CROUT
+from Doolittle import DOOL
+from Cholesky import CHOL
 
 
 import numpy as np
@@ -39,6 +44,12 @@ _x0 = np.zeros(4).reshape(4,1)
 #_egpp = EGPP(_matrix)                          #Gauss Pivoteo Parcial
 #_egpt = EGPT(_matrix)                          #Gauss Pivoteo Total
 
+#lusinm= LUSM(_matrix)                          #LU simple
+#luppar=LUPP(_matrix)                           #LU pivoteo parcial
+#cro=CROUT(_matrix)                             #crout
+#dol=DOOL(_matrix)                               #doolitle
+#Chol=CHOL(_matrix)
+
 #_jac = Jacobi(_matrix,_x0,1E-7,100)
 #_gse = GSeidel(_matrix,_x0,1E-7,100)
 #_sor = Sor(_matrix,_x0,1.5,1E-7,100)
@@ -47,4 +58,4 @@ _x0 = np.zeros(4).reshape(4,1)
 #_lag = Lagrange(_x, _y)
 #_tli = TLineal(_x, _y)
 #_tcu = TCuad(_x, _y)
-_tcb = TCubic(_x, _y)
+#_tcb = TCubic(_x, _y)

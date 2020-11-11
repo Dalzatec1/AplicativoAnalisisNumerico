@@ -17,8 +17,9 @@ class Matrix ():
             if (len(args[0]) != self.size**2 or len(args[1]) != self.size):
                 return
 
-            
+
             self.ext = self.createExtendedMatrix(args[0],args[1])
+            
             self.A = self.createA(args[0])
             self.B = self.createB(args[1])
 
@@ -93,4 +94,35 @@ class Matrix ():
                 _x[_i] = self.ext[_i][_n] / _piv - _sum
 
             print("\n Solution: \n\n", _x)
+       
+
+        def solvepro(self,first,second):
+            
+            extend=np.column_stack([first,second])
+         
+            n = len(extend)
+            x = np.zeros(n,dtype=np.complex_)
+            x[0] =extend[0,n]/extend[0,0]
+            for i in range(1,n):
+                a=np.append([1],np.transpose(x[0:i]))           
+                a1=np.append(extend[i,n],extend[i,0:i]*-1)                         
+                x[i]=np.dot(a,a1)/extend[i,i]
+            
+            print("\n Solution: \n\n", x)
+            return x
+            
+        def solvereg(self,first,second):
+            
+            extend=np.column_stack([first,second])
+   
+            n = len(extend)
+            x = np.zeros(n,dtype=np.complex_)
+            x[n-1] = extend[n-1,n]/extend[n-1,n-1]
+            for i in reversed(range(n-1)):
+                a=np.append([1],np.transpose(x[i+1:n])) 
+                a1=np.append(extend[i,n],extend[i,i+1:n]*-1)            
+                x[i]=np.dot(a,a1)/extend[i,i]
+
+            print("\n Solution reg: \n\n", x.real)
+            return x
         
