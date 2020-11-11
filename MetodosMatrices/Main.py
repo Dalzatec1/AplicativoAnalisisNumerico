@@ -48,7 +48,7 @@ _x0 = np.zeros(4).reshape(4,1)
 #luppar=LUPP(_matrix)                           #LU pivoteo parcial
 #cro=CROUT(_matrix)                             #crout
 #dol=DOOL(_matrix)                               #doolitle
-Chol=CHOL(_matrix)                             #cholesky
+#Chol=CHOL(_matrix)                             #cholesky
 
 #_jac = Jacobi(_matrix,_x0,1E-7,100)
 #_gse = GSeidel(_matrix,_x0,1E-7,100)

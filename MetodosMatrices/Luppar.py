@@ -51,6 +51,8 @@ class LUPP():
             self.matrix.showMatrix(L)
             print("\nU: ")
             self.matrix.showMatrix(U)
+            print("\nP: ")
+            self.matrix.showMatrix(P)
         U[n-1,n-1]=M[n-1,n-1]
         z=self.matrix.solvepro(L,np.dot(P,self.matrix.B))
 
