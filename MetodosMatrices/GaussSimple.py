@@ -1,4 +1,5 @@
 from Matrix import Matrix
+import numpy as np
 class EGS():
     def __init__(self, _matrix:Matrix):
         self.matrix = _matrix
@@ -21,7 +22,7 @@ class EGS():
 
         self.matrix.solveMatrix()
 
-            
+
     def checkIfFirstZero(self):
 
         if (self.matrix.getIndexOf(0,0) == 0):
@@ -31,7 +32,7 @@ class EGS():
                     self.matrix.switchRows(_index,0)
                     return
                 _index += 1
-
+   
     
         
 
