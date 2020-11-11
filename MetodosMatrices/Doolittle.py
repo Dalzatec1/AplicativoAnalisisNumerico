@@ -11,7 +11,7 @@ class DOOL():
         L=np.eye(n)
         U=np.eye(n)
         M=self.matrix.A
-        print(n)
+  
         for i in range(0,n):
             
             for j in range(i,n):

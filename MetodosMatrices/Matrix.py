@@ -108,7 +108,7 @@ class Matrix ():
                 a1=np.append(extend[i,n],extend[i,0:i]*-1)                         
                 x[i]=np.dot(a,a1)/extend[i,i]
             
-            print("\n Solution: \n\n", x)
+      
             return x
             
         def solvereg(self,first,second):

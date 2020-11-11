@@ -23,9 +23,9 @@ class LUPP():
             if (aux0>abs(M[i,i])):
                 aux2=M[i+aux,i:n].copy()
                 aux3=P[i+aux,:].copy()
-                print(aux2)
+                
                 M[aux+i,i:n]=M[i,i:n]
-                print(aux2)
+                
                 P[aux+i,0:n]=P[i,:]
                 
                 M[i,i:n]=aux2
@@ -53,8 +53,7 @@ class LUPP():
             self.matrix.showMatrix(U)
         U[n-1,n-1]=M[n-1,n-1]
         z=self.matrix.solvepro(L,np.dot(P,self.matrix.B))
-        print(U)
-        print(z)
+
         x=self.matrix.solvereg(U,z)
         
         
