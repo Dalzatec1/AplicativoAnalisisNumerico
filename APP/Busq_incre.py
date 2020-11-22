@@ -1,8 +1,12 @@
 from tkinter import *
+from AuxClasses.ExpEval import expEval
+from AuxClasses.MasterM import busqueda
+
 import numpy as np
 try:
     import tkinter as tk                # python 3
     from tkinter import font as tkfont  # python 3
+
 except ImportError:
     import Tkinter as tk     # python 2
     import tkFont as tkfont  # python 2
@@ -59,35 +63,5 @@ class B_I(tk.Frame):
         var2=float(self.entradaX.get())
         var3=float(self.entradaD.get())
         var4=int(self.entradaN.get())
-        busqueda(var1,var2,var3,var4)
-
-
-def busqueda(f,x0,dx,n):
-    xant=x0
-    xact=xant+dx
-    fant=f(xant)
-    fact=f(xact)
-    cont=1
-    while cont<n:
-        xant=xact
-        xact=xant+dx
-        fant=f(xant)
-        fact=f(xact)
-        
-        if fant*fact<0:
-            print("Hay una raiz de f en: ","[ ",xant," , ",xact," ]")
-        cont+=1
-        
-import numpy as np
-
-def f(x):
-    return np.log((np.sin(x))**2+1)-1/2
-x0=-3
-dx=0.5
-n=100
-busqueda(f,x0,dx,n)
-
-
-
-    
+        busqueda(var1,var2,var3,var4)  
 
